@@ -1,0 +1,88 @@
+{
+  "name": "@detdev/calendar",
+  "version": "0.1.1",
+  "description": "Headless, themable calendar / booking component for React 18-19.",
+  "keywords": [
+    "calendar",
+    "booking",
+    "react",
+    "detdev",
+    "ui-component",
+    "tailwind",
+    "radix-ui"
+  ],
+  "author": "DET Titans Dev",
+  "license": "MIT",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/index.cjs",
+  "module": "dist/index.mjs",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.mjs",
+      "default": "./dist/index.mjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "sideEffects": false,
+  "peerDependencies": {
+    "react": ">=18 <20",
+    "react-dom": ">=18 <20"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.10",
+    "clsx": "^2.1.0"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.22.0",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^9.22.0",
+    "postcss": "^8.5.3",
+    "rimraf": "^5.0.0",
+    "tailwindcss": "^3.3.3",
+    "tsup": "^8.1.1",
+    "typescript": "~5.7.2",
+    "vite": "^6.3.2",
+    "vite-plugin-dts": "^3.5.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist",
+    "dev": "vite",
+    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "preview": "vite preview",
+    "release": "npm version patch && npm publish --workspace=@detdev/calendar --access public",
+    "prepublishOnly": "npm run build"
+  },
+  "tsup": {
+    "entry": "src/index.ts",
+    "dts": true,
+    "format": [
+      "cjs",
+      "esm"
+    ],
+    "minify": true,
+    "splitting": false,
+    "clean": true,
+    "treeshake": true,
+    "target": "es2019"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DETDevs/det.components.git",
+    "directory": "packages/calendar"
+  },
+  "bugs": {
+    "url": "https://github.com/DETDevs/det.components/issues"
+  },
+  "homepage": "https://github.com/DETDevs/det.components/tree/main/packages/calendar#readme"
+}
