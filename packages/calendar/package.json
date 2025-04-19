@@ -1,7 +1,7 @@
 {
   "name": "@detdev/calendar",
-  "version": "0.1.1",
-  "description": "Headless, themable calendar / booking component for React 18-19.",
+  "version": "0.1.10",
+  "description": "Ajuste de READ.ME",
   "keywords": [
     "calendar",
     "booking",
@@ -20,19 +20,24 @@
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
+  "style": "dist/index.css",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
+      "style": "./dist/index.css",
       "require": "./dist/index.cjs",
-      "import": "./dist/index.mjs",
-      "default": "./dist/index.mjs"
-    }
+      "import": "./dist/index.mjs"
+    },
+    "./dist/index.css": "./dist/index.css"
   },
+  "sideEffects": [
+    "./dist/index.css"
+  ],
   "files": [
     "dist",
     "README.md",
     "LICENSE"
   ],
-  "sideEffects": false,
   "peerDependencies": {
     "react": ">=18 <20",
     "react-dom": ">=18 <20"
@@ -57,11 +62,11 @@
   },
   "scripts": {
     "clean": "rimraf dist",
-    "dev": "vite",
-    "build": "tsup src/index.ts --dts --format cjs,esm",
-    "preview": "vite preview",
-    "release": "npm version patch && npm publish --workspace=@detdev/calendar --access public",
-    "prepublishOnly": "npm run build"
+    "build:css": "tailwindcss -i ./src/index.css -o ./dist/index.css --minify",
+    "build:ts": "tsup src/index.ts --dts --format cjs,esm",
+    "build": "npm run clean && npm run build:css && npm run build:ts",
+    "prepublishOnly": "npm run build",
+    "dev": "vite"
   },
   "tsup": {
     "entry": "src/index.ts",

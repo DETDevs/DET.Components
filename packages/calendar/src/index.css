@@ -7,7 +7,3 @@
   --calendar-partial:#facc15; /* yellow‑400 */
   --calendar-full:   #f87171; /* red‑400 */
 }
-
-.btn-nav {
-  @apply bg-slate-800 text-white text-sm rounded px-2 py-1 hover:bg-slate-700;
-}

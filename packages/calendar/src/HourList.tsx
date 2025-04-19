@@ -25,7 +25,7 @@ export const HourList = ({ iso, hours, open, onClose, onConfirm }: Props) => {
         >
           <Dialog.Close asChild>
             <button
-              className="absolute right-4 top-4 cursor-pointer rounded-xl border-0
+              className="absolute flex justify-center items-center w-8 h-8 right-4 top-4 cursor-pointer rounded-full border-0
                          p-1 bg-red-500 text-white hover:bg-red-400"
               aria-label="Cerrar"
             >

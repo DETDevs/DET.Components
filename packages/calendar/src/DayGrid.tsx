@@ -3,7 +3,7 @@ import { getMonthMatrix, iso } from './dateUtils';
 import { DayState } from './types';
 
 interface Props {
-  monthDate: Date;              // 1‑del‑mes
+  monthDate: Date;            
   weekStartsOn: 0 | 1;
   getState: (iso: string) => DayState;
   onSelect: (d: Date) => void;

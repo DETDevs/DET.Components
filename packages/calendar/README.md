@@ -40,3 +40,26 @@ export default () => (
 npm i @detdev/calendar
 # ó
 pnpm add @detdev/calendar
+
+
+```
+
+```Colores por defecto
+
+:root {
+--calendar-free: #10b981; /_ verde _/
+--calendar-partial: #facc15; /_ amarillo _/
+--calendar-full: #f87171; /_ rojo _/
+}
+
+````
+
+
+```Notas Tecnicas
+✅ Compatible con React 18.x y 19.x
+
+🎨 El CSS se inyecta automáticamente (no hace falta importarlo manualmente)
+
+💅 Estilizado con Tailwind, no requiere Tailwind en tu proyecto
+
+````
